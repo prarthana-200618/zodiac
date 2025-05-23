@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zodiac Sign Finder</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800 flex items-center justify-center h-screen">
+  <form onsubmit="return goToZodiacPage()" class="bg-white p-6 rounded shadow-md w-full max-w-lg space-y-4">
+    <h1 class="text-2xl font-bold text-center">🔮 Discover Your Zodiac</h1>
+
+    <div>
+      <label class="block font-medium">Name:</label>
+      <input type="text" id="name" required class="w-full p-2 border rounded"/>
+    </div>
+
+    <div>
+      <label class="block font-medium">Date of Birth:</label>
+      <input type="date" id="dob" required class="w-full p-2 border rounded"/>
+    </div>
+
+    <div>
+      <label class="block font-medium">Zodiac Sign:</label>
+      <select id="zodiac" required class="w-full p-2 border rounded">
+        <option value="" disabled selected>Select your zodiac sign</option>
+        <option value="aries">♈ Aries</option>
+        <option value="taurus">♉ Taurus</option>
+        <option value="gemini">♊ Gemini</option>
+        <option value="cancer">♋ Cancer</option>
+        <option value="leo">♌ Leo</option>
+        <option value="virgo">♍ Virgo</option>
+        <option value="libra">♎ Libra</option>
+        <option value="scorpio">♏ Scorpio</option>
+        <option value="sagittarius">♐ Sagittarius</option>
+        <option value="capricorn">♑ Capricorn</option>
+        <option value="aquarius">♒ Aquarius</option>
+        <option value="pisces">♓ Pisces</option>
+      </select>
+    </div>
+
+    <button type="submit" class="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700 transition">
+      Show My Zodiac Info
+    </button>
+  </form>
+
+  <script>
+    function goToZodiacPage() {
+      const zodiac = document.getElementById('zodiac').value;
+      if (!zodiac) return false;
+      window.location.href = zodiac + ".html";
+      return false;
+    }
+  </script>
+</body>
+</html>
